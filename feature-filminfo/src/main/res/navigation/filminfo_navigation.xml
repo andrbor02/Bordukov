@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/filminfo_navigation"
+    app:startDestination="@id/filmInfoFragment">
+
+    <fragment
+        android:id="@+id/filmInfoFragment"
+        android:name="com.example.feature_filminfo.impl.presentation.ui.FilmInfoFragment"
+        android:label="FilmInfoFragment">
+
+        <deepLink app:uri="@string/uri_film_info_expect_argument" />
+
+        <argument
+            android:name="@string/film_id"
+            app:argType="string" />
+<!--            android:defaultValue="" -->
+
+    </fragment>
+</navigation>

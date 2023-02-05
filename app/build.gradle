@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -34,11 +35,40 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.9.0'
-    implementation 'androidx.appcompat:appcompat:1.6.0'
-    implementation 'com.google.android.material:material:1.8.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation(project(":core-model"))
+    implementation(project(":core-utils"))
+    implementation(project(":core-data"))
+    implementation(project(":core-network"))
+    implementation(project(":feature-filmlist"))
+    implementation(project(":feature-filminfo"))
+
+    // Core
+    implementation libs.corektx
+    implementation libs.appcompat
+
+    // UI
+    implementation libs.material
+
+    // Coroutines
+    implementation libs.coroutines.core
+    implementation libs.coroutines.android
+
+    // Androidx
+    implementation libs.viewmodel
+    implementation libs.livedata
+    implementation libs.fragment
+
+    // Test
+    testImplementation libs.junit4
+    testImplementation libs.junit5
+    testImplementation libs.mockk
+    androidTestImplementation libs.espresso
+
+    // DI
+    implementation libs.dagger
+    kapt libs.dagger.compiler
+
+    // Navigation
+    implementation libs.navigation.fragment
+    implementation libs.navigation.ui
 }

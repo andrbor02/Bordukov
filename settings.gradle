@@ -14,3 +14,10 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Bordukov"
 include ':app'
+include ':feature-filmlist'
+include ':feature-filminfo'
+include ':core-model'
+include ':core-utils'
+include ':core-ui'
+include ':core-data'
+include ':core-network'
